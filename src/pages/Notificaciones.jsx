@@ -1,6 +1,6 @@
 // src/pages/Notificaciones.jsx
 import React from "react";
-import "./notificaciones.css"; // crea este archivo para estilos
+import "./Notificaciones.css"; // crea este archivo para estilos
 
 const Notificaciones = () => {
   const lista = [
