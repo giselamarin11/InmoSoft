@@ -1,0 +1,126 @@
+.detalle-apartamento-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #e0dede;
+  padding-top: 80px;
+}
+
+/* --- Info y mapa en dos columnas --- */
+.detalle-content {
+  display: flex;
+  gap: 20px;
+  margin-top: 2rem;
+}
+
+.info-apartamento {
+  flex: 1;
+  background-color: #eae7e7;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #74B9E7;
+  max-width: 50%;
+}
+
+.mapa-apartamento {
+  flex: 1;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #74B9E7;
+  max-width: 50%;
+}
+
+.mapa-apartamento h3 {
+  margin-bottom: 10px;
+  color: #070707;
+  font-family: Arial rgb(4, 4, 4);
+}
+
+/* Estilos del mapa Leaflet */
+.leaflet-container {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+}
+
+/* --- Galería --- */
+.imagen-carrusel {
+  margin-top: 40px;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* Modal imagen */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.imagen-grande {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+/* Contenedor de los botones del modal */
+.modal-acciones {
+  display: flex;
+  justify-content: center; /* Centra los botones */
+  gap: 15px; /* Espacio entre botones */
+  margin-top: 20px;
+}
+
+/* Estilos generales para los botones */
+.modal-acciones button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Botón Hablar con Asesor */
+.btn-hablar-asesor {
+  background-color: #74B9E7;
+  color: white;
+}
+
+.btn-hablar-asesor:hover {
+  background-color: #5aa7d1;
+}
+
+/* Botón Ver Detalle Apartamento */
+.btn-ver-detalle {
+  background-color: #2ecc71; /* Verde */
+  color: white;
+}
+
+.btn-ver-detalle:hover {
+  background-color: #27ae60; /* Verde más oscuro */
+}
+
+
+.detalle-apartamento-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333; /* opcional */
+}
+
