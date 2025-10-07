@@ -12,7 +12,7 @@ import Contacto from './pages/Contacto';
 import Filtros from './pages/Filtros';
 import Notificaciones from './pages/Notificaciones';
 import Login from './pages/Login.jsx';
-import Register from './componentes/register.jsx';
+import Register from './componentes/Register.jsx';
 import Recover from './componentes/Recover';
 import VerifyCode from './componentes/VerifyCode';
 import ResetPassword from './componentes/ResetPassword';
