@@ -7,7 +7,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import propiedadesMock from "../data/propiedadesMock"; 
+import propiedadesMock from "../data/propiedadesMock";
 
 
 // Icono personalizado del marcador
@@ -19,15 +19,18 @@ const icon = new L.Icon({
 function DetalleApartamento() {
   const { id } = useParams();
   const propiedad = propiedadesMock.find((p) => p.id === parseInt(id));
+  const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
   if (!propiedad) {
     return <p>No se encontró información del apartamento.</p>;
   }
 
-  const ubicacion = [propiedad.ubicacion.lat, propiedad.ubicacion.lng];
+  // const ubicacion = [propiedad.ubicacion.lat, propiedad.ubicacion.lng];
 
   // Estado para modal de imagen
-  const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
 
+  if (!propiedad) {
+    return <p>No se encontró información del apartamento.</p>;
+  }
   const settings = {
     pauseOnHover: true,
     dots: true,

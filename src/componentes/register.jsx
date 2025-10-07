@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Register.css';
 import { Link, useNavigate } from "react-router-dom";
 
@@ -7,6 +7,7 @@ function Register() {
     const [role, setRole] = useState('usuario');
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
+    const passwordStrength = 3; 
     const [formData, setFormData] = useState({
         // Campos de usuario
         nombre: '',
@@ -26,15 +27,14 @@ function Register() {
         primerApellido: '',
         segundoApellido: '',
         cedula: '',
-        email: '',
-        telefono: '',
         contraseña: '',
-        confirmPassword: '',
+        
 
     });
 
     // 👉 Función que hace el fetch
     const registrarUsuario = async () => {
+        setIsLoading(null)
         const data = {
             primerNombre: formData.nombre,
             primerApellido: formData.apellido,
@@ -163,9 +163,9 @@ function Register() {
         }
     };
 
-
+    
     const [errors, setErrors] = useState({});
-    const [passwordStrength, setPasswordStrength] = useState(0);
+    //const [passwordStrength, setPasswordStrength] = useState(0);
 
     // Función para cambiar el rol
     const handleRoleChange = (selectedRole) => {
@@ -216,18 +216,7 @@ function Register() {
         });
     };
 
-
-    // Función para evaluar la fuerza de la contraseña
-    const evaluatePasswordStrength = (password) => {
-        let strength = 0;
-        if (password.length >= 8) strength++;
-        if (/[a-z]/.test(password)) strength++;
-        if (/[A-Z]/.test(password)) strength++;
-        if (/[0-9]/.test(password)) strength++;
-        if (/[^a-zA-Z0-9]/.test(password)) strength++;
-
-        setPasswordStrength(Math.min(strength, 3)); // 0: débil, 1-2: medio, 3+: fuerte
-    };
+   
 
     // Función para validar email
     const validateEmail = (email) => {
@@ -235,14 +224,14 @@ function Register() {
         return emailPattern.test(email);
     };
 
-    // Función para validar teléfono
-    const validatePhone = (phone) => {
+    // TODO Función para validar teléfono
+    /*const validatePhone = (phone) => {
         const phoneRegex = /^[+]?[\d\s-()]{10,}$/;
         return phoneRegex.test(phone);
-    };
+    };*/
 
-    // Función para validar el formulario
-    const validateForm = () => {
+    // TODO Función para validar el formulario
+    /*const validateForm = () => {
         const newErrors = {};
 
         if (role === 'usuario') {
@@ -315,7 +304,7 @@ function Register() {
 
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
-    };
+    };*/
 
 
 

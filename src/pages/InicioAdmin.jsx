@@ -32,7 +32,7 @@ function InicioMejorado() {
     const [ciudadSeleccionada, setCiudadSeleccionada] = useState('');
     const [valorSeleccionado, setValorSeleccionado] = useState('');
     const [tipoInmueble, setTipoInmueble] = useState('');
-    const [descripcion, setDescripcion] = useState('');
+    //const [descripcion, setDescripcion] = useState('');
     const [propiedadesFavoritas, setPropiedadesFavoritas] = useState(new Set());
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
@@ -165,14 +165,14 @@ function InicioMejorado() {
     ];
 
     // Información de la inmobiliaria mockeada
-    const infoInmobiliaria = {
+    /*const infoInmobiliaria = {
         nombre: 'Casa Ideal Inmobiliaria',
         telefono: '+57 301 234 5678',
         email: 'info@casaideal.com',
         direccion: 'Carrera 43A # 10-25, Medellín, Colombia',
         logo: '🏠 Casa Ideal',
         descripcion: 'Más de 15 años ayudándote a encontrar tu hogar perfecto'
-    };
+    };*/
 
     // Opciones para los desplegables
     const ciudades = [
@@ -339,7 +339,8 @@ function InicioMejorado() {
                     setError('No se encontraron propiedades con los filtros seleccionados. Intenta ajustar tus criterios de búsqueda.');
                 }
             } catch (err) {
-                setError('Ocurrió un error al buscar propiedades. Por favor intenta nuevamente.');
+                const a = `Ocurrió un error al buscar propiedades. Por favor intenta nuevamente. ${err}`;
+                setError(a);
                 setLoading(false);
             }
         }, 1500);
